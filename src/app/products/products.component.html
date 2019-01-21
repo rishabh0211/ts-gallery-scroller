@@ -1,0 +1,24 @@
+<div class="" infiniteScroll [infiniteScrollDistance]="0.1" [infiniteScrollThrottle]="50" (scrolled)="onScroll()">
+  <div class="row col-12">
+    <h1>Products</h1>
+  </div>
+  <div class="row" #target>
+
+    <div *ngFor="let a of productsToBeShown; let f=first; let i = index" class="col-6 col-md-3 col-sm-4 prd-thumb-container">
+      <div class="card">
+        <img id="prd-image" class="card-img-top" src="https://loremflickr.com/320/240?random={{i}}" alt="Card image cap"
+          onError="this.src='../../assets/images/no-image.jpg'">
+        <div class="card-body">
+          <p class="card-text">Product Name</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div *ngIf="showSpinner" class="spinner-border text-light">
+</div>
+<div *ngIf="showSpinner" class="loader_overlay"></div>
